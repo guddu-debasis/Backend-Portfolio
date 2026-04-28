@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── DARK THEME (default) ─── */
+:root {
+  --bg:       #0a0b10;
+  --surface:  #0f1018;
+  --card:     #13151f;
+  --border:   #1e2130;
+  --text:     #e2e8f0;
+  --dim:      #8892a4;
+  --muted:    #4a5568;
+  --accent:   #00d4ff;
+  --green:    #39d353;
+  --grid-line: rgba(0, 212, 255, 0.03);
+  --shadow-card: rgba(0, 212, 255, 0.1);
+  --neon-border: rgba(0, 212, 255, 0.2);
+  --neon-inset:  rgba(0, 212, 255, 0.03);
+  --tag-border:  rgba(0, 212, 255, 0.25);
+  --tag-bg:      rgba(0, 212, 255, 0.05);
+  --tag-color:   #00d4ff;
+}
+
+/* ─── LIGHT THEME ─── */
+html:not(.dark) {
+  --bg:       #f0f4f8;
+  --surface:  #ffffff;
+  --card:     #ffffff;
+  --border:   #d1dde8;
+  --text:     #0f172a;
+  --dim:      #475569;
+  --muted:    #94a3b8;
+  --accent:   #0284c7;
+  --green:    #16a34a;
+  --grid-line: rgba(2, 132, 199, 0.05);
+  --shadow-card: rgba(2, 132, 199, 0.12);
+  --neon-border: rgba(2, 132, 199, 0.25);
+  --neon-inset:  rgba(2, 132, 199, 0.03);
+  --tag-border:  rgba(2, 132, 199, 0.3);
+  --tag-bg:      rgba(2, 132, 199, 0.08);
+  --tag-color:   #0284c7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); opacity: 0.4; }
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glow */
+.glow-cyan { text-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+html:not(.dark) .glow-cyan { text-shadow: 0 0 20px rgba(2, 132, 199, 0.35); }
+
+/* Terminal cursor */
+.cursor::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Section fade */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card hover */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px var(--shadow-card);
+  border-color: var(--accent);
+}
+
+/* Navbar blur */
+.nav-blur {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Neon border */
+.neon-border {
+  border: 1px solid var(--neon-border);
+  box-shadow: inset 0 0 20px var(--neon-inset);
+  transition: border-color 0.2s ease;
+}
+
+/* Typewriter */
+.typewriter-container { min-height: 2.5rem; }
+
+/* Noise */
+.noise::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Tech tag */
+.tech-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--tag-border);
+  color: var(--tag-color);
+  background: var(--tag-bg);
+  white-space: nowrap;
+}
+
+/* Timeline */
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(0,212,255,0.27), transparent);
+}
