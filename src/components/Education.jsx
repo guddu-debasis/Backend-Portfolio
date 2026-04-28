@@ -75,9 +75,9 @@ export default function Education() {
       <div className="max-w-6xl mx-auto fade-section" ref={sectionRef}>
         {/* Section header */}
         <div className="flex items-center gap-4 mb-12">
-          <span className="font-mono text-sm text-[#00d4ff]">05.</span>
-          <h2 className="font-mono text-3xl font-bold text-white">Education</h2>
-          <div className="flex-1 h-px bg-[#1e2130] max-w-xs" />
+          <span className="font-mono text-sm" style={{ color: 'var(--accent)' }}>05.</span>
+          <h2 className="font-mono text-3xl font-bold" style={{ color: 'var(--text)' }}>Education</h2>
+          <div className="flex-1 h-px max-w-xs" style={{ backgroundColor: 'var(--border)' }} />
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -86,21 +86,28 @@ export default function Education() {
             {education.map((edu, i) => (
               <div
                 key={i}
-                className="neon-border rounded-xl bg-[#0f1018] p-6 hover:border-[#00d4ff33] transition-all group"
+                className="neon-border rounded-xl p-6 transition-all group"
+                style={{ backgroundColor: 'var(--card)' }}
               >
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#00d4ff10] flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#00d4ff1a] transition-colors">
-                    <GraduationCap size={18} className="text-[#00d4ff]" />
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 transition-colors"
+                    style={{ backgroundColor: 'var(--tag-bg)' }}
+                  >
+                    <GraduationCap size={18} style={{ color: 'var(--accent)' }} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-                      <span className="font-mono text-xs text-[#4a5568] border border-[#1e2130] px-2 py-0.5 rounded">
+                      <span
+                        className="font-mono text-xs px-2 py-0.5 rounded"
+                        style={{ color: 'var(--muted)', border: '1px solid var(--border)' }}
+                      >
                         {edu.type}
                       </span>
-                      <span className="font-mono text-xs text-[#4a5568]">{edu.period}</span>
+                      <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>{edu.period}</span>
                     </div>
-                    <h3 className="font-mono text-sm font-bold text-white mt-1">{edu.degree}</h3>
-                    <p className="font-body text-xs text-[#8892a4] mt-0.5">{edu.institution}</p>
+                    <h3 className="font-mono text-sm font-bold mt-1" style={{ color: 'var(--text)' }}>{edu.degree}</h3>
+                    <p className="font-body text-xs mt-0.5" style={{ color: 'var(--dim)' }}>{edu.institution}</p>
                     <span
                       className="font-mono text-sm font-semibold mt-2 inline-block"
                       style={{ color: edu.gradeColor }}
@@ -111,8 +118,8 @@ export default function Education() {
                     {edu.highlights.length > 0 && (
                       <ul className="mt-3 space-y-1">
                         {edu.highlights.map((h, j) => (
-                          <li key={j} className="flex gap-2 text-xs text-[#4a5568] font-body">
-                            <span className="text-[#00d4ff] flex-shrink-0">▸</span>
+                          <li key={j} className="flex gap-2 text-xs font-body" style={{ color: 'var(--muted)' }}>
+                            <span style={{ color: 'var(--accent)', flexShrink: 0 }}>▸</span>
                             <span>{h}</span>
                           </li>
                         ))}
@@ -126,27 +133,29 @@ export default function Education() {
 
           {/* Certificates sidebar */}
           <div className="space-y-5">
-            <div className="neon-border rounded-xl bg-[#0f1018] p-5">
+            <div className="neon-border rounded-xl p-5" style={{ backgroundColor: 'var(--card)' }}>
               <div className="flex items-center gap-2 mb-4">
-                <Award size={16} className="text-[#00d4ff]" />
-                <h3 className="font-mono text-sm font-semibold text-white">Certificates</h3>
+                <Award size={16} style={{ color: 'var(--accent)' }} />
+                <h3 className="font-mono text-sm font-semibold" style={{ color: 'var(--text)' }}>Certificates</h3>
               </div>
               {certificates.map((cert, i) => (
-                <div key={i} className="border-t border-[#1e2130] pt-4 mt-4 first:border-0 first:pt-0 first:mt-0">
+                <div key={i} className="border-t pt-4 mt-4 first:border-0 first:pt-0 first:mt-0"
+                  style={{ borderColor: 'var(--border)' }}>
                   <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 font-mono text-xs font-bold text-[#0a0b10]"
-                    style={{ backgroundColor: cert.color }}
+                    className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 font-mono text-xs font-bold"
+                    style={{ backgroundColor: cert.color, color: '#0a0b10' }}
                   >
                     {cert.issuer.slice(0, 2)}
                   </div>
-                  <h4 className="font-mono text-sm font-semibold text-white">{cert.name}</h4>
-                  <p className="font-mono text-xs text-[#00d4ff] mt-0.5">{cert.issuer}</p>
-                  <p className="font-body text-xs text-[#4a5568] mt-2">{cert.topics}</p>
+                  <h4 className="font-mono text-sm font-semibold" style={{ color: 'var(--text)' }}>{cert.name}</h4>
+                  <p className="font-mono text-xs mt-0.5" style={{ color: 'var(--accent)' }}>{cert.issuer}</p>
+                  <p className="font-body text-xs mt-2" style={{ color: 'var(--muted)' }}>{cert.topics}</p>
                   <a
                     href={cert.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xs text-[#39d353] hover:underline mt-3 inline-block"
+                    className="font-mono text-xs hover:underline mt-3 inline-block"
+                    style={{ color: 'var(--green)' }}
                   >
                     View Credential →
                   </a>
@@ -154,16 +163,20 @@ export default function Education() {
               ))}
             </div>
 
-            {/* Quick facts */}
-            <div className="neon-border rounded-xl bg-[#0f1018] p-5">
-              <p className="font-mono text-xs text-[#4a5568] mb-4">// quick stats</p>
+            {/* Quick stats */}
+            <div className="neon-border rounded-xl p-5" style={{ backgroundColor: 'var(--card)' }}>
+              <p className="font-mono text-xs mb-4" style={{ color: 'var(--muted)' }}>// quick stats</p>
               {[
                 { label: 'Current CGPA', value: '9.17', color: '#00d4ff' },
                 { label: '12th Score', value: '92.33%', color: '#39d353' },
                 { label: '10th Score', value: '93.67%', color: '#a78bfa' },
               ].map((stat) => (
-                <div key={stat.label} className="flex justify-between items-center py-2 border-b border-[#1e2130] last:border-0">
-                  <span className="font-mono text-xs text-[#4a5568]">{stat.label}</span>
+                <div
+                  key={stat.label}
+                  className="flex justify-between items-center py-2 border-b last:border-0"
+                  style={{ borderColor: 'var(--border)' }}
+                >
+                  <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>{stat.label}</span>
                   <span className="font-mono text-sm font-bold" style={{ color: stat.color }}>
                     {stat.value}
                   </span>
