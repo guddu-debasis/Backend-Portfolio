@@ -48,7 +48,7 @@ const projects = [
     description:
       'An AI-driven movie recommendation engine using semantic search, vector embeddings, and RAG pipelines to provide contextual suggestions based on user intent.',
     tags: ['LangChain', 'Python', 'Vector DBs', 'RAG', 'LLM APIs'],
-    github: 'https://github.com/guddu-debasis',
+    github: 'https://github.com/guddu-debasis/CineMind-AI',
     live: null,
     icon: Layers,
     color: '#fb923c',
@@ -61,7 +61,7 @@ const projects = [
     description:
       'A real-time chat application with JWT auth, WebSocket messaging via Socket.IO, REST APIs, and MongoDB for persistent data — designed for low-latency communication.',
     tags: ['Node.js', 'Express', 'Socket.IO', 'MongoDB', 'JWT', 'React'],
-    github: 'https://github.com/guddu-debasis',
+    github: 'https://github.com/guddu-debasis/CIAO',
     live: null,
     icon: Server,
     color: '#f472b6',
@@ -74,7 +74,7 @@ const projects = [
     description:
       'An AI-powered learning platform that converts raw input into structured quizzes and flashcards. Supports 500+ concurrent users with a responsive Streamlit UI.',
     tags: ['Python', 'Streamlit', 'AI Models', 'Prompt Engineering', 'JavaScript'],
-    github: 'https://github.com/guddu-debasis',
+    github: 'https://github.com/guddu-debasis/Mindspark-Ai',
     live: null,
     icon: Layers,
     color: '#34d399',
