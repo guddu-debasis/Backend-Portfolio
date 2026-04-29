@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Education from './components/Education'
 import Contact from './components/Contact'
+import LeetCode from './components/LeetCode'
 import Footer from './components/Footer'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Projects />
           <Experience />
           <Education />
+          <LeetCode />
           <Contact />
         </main>
         <Footer />
