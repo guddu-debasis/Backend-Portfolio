@@ -54,7 +54,7 @@ export default function About() {
             <p>
               Hey — I'm <span className="font-semibold" style={{ color: 'var(--text)' }}>Debasis Panda</span>, a Computer Science undergraduate at{' '}
               <span style={{ color: 'var(--accent)' }}>Odisha University of Technology and Research</span>,
-              maintaining a CGPA of <span className="font-mono" style={{ color: 'var(--green)' }}>9.16</span>.
+              maintaining a CGPA of <span className="font-mono" style={{ color: 'var(--green)' }}>9.12</span>.
             </p>
             <p>
               I specialize in building <span style={{ color: 'var(--text)' }}>backend systems</span> that are clean, scalable, and production-ready —
