@@ -94,7 +94,7 @@ export default function Hero() {
             {/* Stats row */}
             <div className="flex flex-wrap gap-8 mb-10">
               {[
-                { value: '9.16', label: 'CGPA' },
+                { value: '9.12', label: 'CGPA' },
                 { value: '3+', label: 'Backend Projects' },
                 { value: '6+', label: 'Total Projects' },
                 { value: '1', label: 'IBM Certificate' },
