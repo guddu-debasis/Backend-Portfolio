@@ -7,7 +7,7 @@ const education = [
     institution: 'Odisha University of Technology and Research',
     short: 'OUTR',
     period: 'Aug 2023 – Jun 2027',
-    grade: 'CGPA: 9.17',
+    grade: 'CGPA: 9.12',
     gradeColor: '#00d4ff',
     location: 'Odisha, India',
     highlights: [
