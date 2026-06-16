@@ -167,7 +167,7 @@ export default function Education() {
             <div className="neon-border rounded-xl p-5" style={{ backgroundColor: 'var(--card)' }}>
               <p className="font-mono text-xs mb-4" style={{ color: 'var(--muted)' }}>// quick stats</p>
               {[
-                { label: 'Current CGPA', value: '9.17', color: '#00d4ff' },
+                { label: 'Current CGPA', value: '9.12', color: '#00d4ff' },
                 { label: '12th Score', value: '92.33%', color: '#39d353' },
                 { label: '10th Score', value: '93.67%', color: '#a78bfa' },
               ].map((stat) => (
